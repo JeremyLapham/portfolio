@@ -1,0 +1,159 @@
+
+.profile-card3,
+.profile-card2,
+.profile-card {
+	background: #fff;
+	width: 370px;
+	height: 418px;
+	box-shadow: 0 3px 10px rgba(55, 55, 55, 0.3);
+	margin-bottom:1rem;
+}
+
+.profile-card,
+.profile-card header,
+.profile-card header img,
+.profile-card .profile-bio,
+.profile-card,
+.profile-card2,
+.profile-card2 header,
+.profile-card2 header img,
+.profile-card2 .profile-bio2,
+.profile-card2,
+.profile-card3 header,
+.profile-card3 header img,
+.profile-card3 .profile-bio3,
+.profile-card3 {
+	overflow: hidden;
+	position: relative;
+	top: 0;
+	transition: all .47s ease-out;
+}
+
+.profile-card:hover header,
+.profile-card:hover .profile-bio {
+	top: -270px;
+	background-image: url(../../assets/pokeball.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	animation: play-once 5s linear forwards;
+	animation-play-state: running;
+}
+
+.profile-card2:hover header,
+.profile-card2:hover .profile-bio2 {
+	top: -270px;
+	background-image: url(../../assets/remmeber.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	animation: play-once 3s linear forwards;
+	animation-play-state: running;
+}
+
+.profile-card3:hover header,
+.profile-card3:hover .profile-bio3{
+	top: -270px;
+	background-image: url(../../assets/advice.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	animation: play-once 4s linear forwards;
+	animation-play-state: running;
+}
+
+.profile-card3 header,
+.profile-card2 header,
+.profile-card header {
+	width: 100%;
+	min-height: 270px;
+}
+
+
+.profile-card:hover header a:before,
+.profile-card2:hover header a:before,
+.profile-card3:hover header a:before {
+	opacity: 1;
+}
+
+.profile-card header h1,
+.profile-card2 header h1,
+.profile-card3 header h1 {
+	margin-top: 20px;
+	margin-bottom: 0;
+	font-weight: 300;
+	letter-spacing: 3px;
+	font-size: 27px;
+	color: #fff;
+	text-align: left;
+	font-weight: 300;
+	position: absolute;
+	bottom: 55px;
+	left: 30px;
+	z-index: 10;
+	cursor: pointer;
+}
+
+.profile-card header h2,
+.profile-card2 header h2,
+.profile-card3 header h2 {
+	margin-top: 10px;
+	margin-bottom: 0;
+	font-weight: 300;
+	letter-spacing: 0;
+	font-size: 14px;
+	color: #fff;
+	text-align: left;
+	font-weight: 300;
+	position: absolute;
+	bottom: 30px;
+	left: 30px;
+	z-index: 10;
+	cursor: pointer;
+}
+
+.profile-card header a,
+.profile-card2 header a,
+.profile-card3 header a {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+.profile-card header img,
+.profile-card2 header img,
+.profile-card3 header img {
+	display: block;
+	width: 100%;
+	height: auto;
+	position: relative;
+	top: 0;
+}
+
+.profile-card:hover header img,
+.profile-card2:hover header img,
+.profile-card3:hover header img {
+	top: 170px;
+}
+
+.profile-bio p,
+.profile-bio2 p,
+.profile-bio3 p {
+	font-weight: 300;
+	font-size: 14px;
+	letter-spacing: 0;
+	line-height: 27px;
+	color: #333;
+	text-align: left;
+	margin: 30px;
+}
+
+@media screen and (max-width: 800px) and (min-width: 320px) {
+
+	.profile-card3,
+	.profile-card2,
+	.profile-card {
+		border-radius: 10px;
+	}
+
+}
