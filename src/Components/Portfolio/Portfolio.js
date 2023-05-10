@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './Portfolio.css';
 import { Button, Col, Container, Dropdown, Modal, Nav, NavDropdown, Navbar, Offcanvas, Row, DropdownButton, ButtonGroup } from 'react-bootstrap';
-import jeremy from '../../assets/JEREMY.png';
 import resume from '../../assets/Jeremy Resume-1.png';
-import { SiCsharp, SiHtml5, SiCss3, SiReact, SiJavascript, SiTypescript, SiBootstrap, SiSlack, SiJira, SiPostman, SiNotion, SiGithub, SiLinkedin, SiMicrosoftazure, SiTrello, SiFigma } from 'react-icons/si';
-import { BsServer } from 'react-icons/bs';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { BiNews } from 'react-icons/bi';
 import Aboutme from '../AboutMe/Aboutme';
 import MyProjects from '../MyProjects/MyProjects';
+import MySkills from '../MySkills/MySkills';
+import Intro from '../Intro/Intro';
 
 
 export default function Portfolio() {
@@ -16,7 +17,7 @@ export default function Portfolio() {
             const scrollY = window.scrollY;
             const parallaxBg = document.querySelector('.parallax-bg');
             if (parallaxBg) {
-                parallaxBg.style.transform = `translateZ(-1px) translateY(${scrollY * 1}px)`;
+                parallaxBg.style.transform = `translateZ(-1px) translateY(${scrollY}px)`;
             }
         };
 
@@ -33,9 +34,7 @@ export default function Portfolio() {
     return (
         <Container fluid className='bg'>
             <Modal size="lg" show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Resume!</Modal.Title>
-                </Modal.Header>
+                <Modal.Header closeButton></Modal.Header>
                 <Modal.Body className='d-flex justify-content-center'>
                     <a href={resume} target='_blank'>
                         <img className='resume' src={resume} />
@@ -46,8 +45,8 @@ export default function Portfolio() {
                 </Modal.Footer>
             </Modal>
             <Navbar collapseOnSelect variant='dark' className='myNav' bg="dark" expand='lg'>
-                <Container fluid>
-                    <Navbar.Brand href="#jeremy">JeremyLapham</Navbar.Brand>
+                <Container>
+                    <Navbar.Brand href="#jeremy">Jeremy Lapham</Navbar.Brand>
                     <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
                     <Navbar.Offcanvas
                         id={`offcanvasNavbar-expand-lg`}
@@ -69,87 +68,18 @@ export default function Portfolio() {
                                 <Nav.Link href="#myProjects" className='navWords'>My Projects</Nav.Link>
                                 <Nav.Link href='https://github.com/JeremyLapham' target='_blank' ><SiGithub size={30} color='#f5f5f5' /></Nav.Link>
                                 <Nav.Link href='https://www.linkedin.com/in/jeremylapham/' target='_blank'><SiLinkedin size={30} color='#0077b5' /></Nav.Link>
+                                <Nav.Link onClick={handleShow} target='_blank'><BiNews size={35} color='white' /></Nav.Link>
                             </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>
                 </Container>
             </Navbar>
-            <Row>
-                <Col className='d-flex justify-content-center mt-5'>
-                    <img src={jeremy} className='meImg' />
-                </Col>
-            </Row>
-            <Row className='meWithsum'>
-                <Col lg={12} className='topTxt d-flex justify-content-center'>
-                    <h1>Jeremy Lapham - Frontend Web Developer</h1>
-                    <h3>Jr. Web Developer. I love to build in the Frontend using languages like HTML, CSS, Javascript and Typescript and even using a framework such as React as a tool for building. I also build using Bootstrap and have some knowledge of Tailwind css. I am capable to work in Backend using C# or SQL but I am not as proficient as I am as Frontend. </h3>
-                </Col>
-            </Row>
-            <Row>
-                <Col className='d-flex justify-content-center'>
-                    <Button size='lg' className='resumeBtn' variant="success" onClick={handleShow}>
-                        My Resume
-                    </Button>
-                </Col>
-            </Row>
-            <Row>
-                <Col className='aboveIcontxt'>
-                    <h2 className='skillsTxt'>All Skills</h2>
-                </Col>
-            </Row>
-            <Row>
-                <div className='fadeAnimation myIcons'>
-                    <Col>
-                        <SiCsharp size={50} color='green' className='cSharp' />
-                    </Col>
-                    <Col>
-                        <SiHtml5 size={50} color='#e34c26' className='icon' />
-                    </Col>
-                    <Col>
-                        <SiCss3 size={50} color='#264de4' className='icon' />
-                    </Col>
-                    <Col>
-                        <SiReact size={50} color='#264de4' className='icon' />
-                    </Col>
-                    <Col>
-                        <SiJavascript size={50} color='#F0DB4F' className='icon' />
-                    </Col>
-                    <Col>
-                        <SiTypescript size={50} color='#007acc' className='icon' />
-                    </Col>
-                    <Col>
-                        <SiBootstrap size={50} color='#563d7c' className='icon' />
-                    </Col>
-                    <Col>
-                        <BsServer size={50} color='#f29111' className='icon' />
-                    </Col>
-                    <Col>
-                        <SiSlack size={50} color='#E01E5A' className='icon' />
-                    </Col>
-                    <Col>
-                        <SiJira size={50} color='#0052CC' className='icon' />
-                    </Col>
-                    <Col>
-                        <SiTrello size={50} color='#007ac0' className='icon' />
-                    </Col>
-                    <Col>
-                        <SiPostman size={50} color='#EF5b25' className='icon' />
-                    </Col>
-                    <Col>
-                        <SiMicrosoftazure size={50} color='#008AD7' className='icon' />
-                    </Col>
-                    <Col>
-                        <SiFigma size={50} color='white' className='icon' />
-                    </Col>
-                    <Col>
-                        <SiNotion size={50} color='white' className='icon' />
-                    </Col>
-                </div>
-            </Row>
+            <Intro />
+            <MySkills />
             <MyProjects />
             <Aboutme />
             <Navbar collapseOnSelect variant='dark' className='myNav' bg="dark" expand='lg'>
-                <Container fluid>
+                <Container>
                     <Navbar.Brand href="#jeremy">JeremyLapham</Navbar.Brand>
                     <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
                     <Navbar.Offcanvas
@@ -159,7 +89,7 @@ export default function Portfolio() {
                     >
                         <Offcanvas.Header closeButton>
                             <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-                                JeremyLapham
+                                Jeremy Lapham
                             </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
@@ -174,6 +104,7 @@ export default function Portfolio() {
                                 <Nav.Link href="#myProjects" className='navWords'>My Projects</Nav.Link>
                                 <Nav.Link href='https://github.com/JeremyLapham' target='_blank' ><SiGithub size={30} color='#f5f5f5' /></Nav.Link>
                                 <Nav.Link href='https://www.linkedin.com/in/jeremylapham/' target='_blank'><SiLinkedin size={30} color='#0077b5' /></Nav.Link>
+                                <Nav.Link onClick={handleShow} target='_blank'><BiNews size={35} color='white' /></Nav.Link>
                             </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>

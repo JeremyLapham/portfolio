@@ -8,8 +8,8 @@
 	z-index: 1;
 }
 
-.topBG .meWithsum .topTxt h1 {
-	font-family: portfolioTitle;
+.meWithsum .topTxt h1 {
+	font-family: portfolioTitle !important;
 	color: white;
 }
 
@@ -31,6 +31,7 @@
 	color:white !important;
 }
 
+.iconTxt,
 .navWords {
 	color: white !important;
 }
@@ -42,6 +43,8 @@
 	margin-left: -12px !important;
 	z-index: 1000;
 	margin-bottom: 2rem;
+	display: flex;
+	align-items: center;
 }
 
 .myIcons {
@@ -76,11 +79,17 @@
 }
 
 .meWithsum {
-	margin-top: 3rem;
+	margin-top: 6rem;
+	margin-bottom: 8rem;
+}
+
+.iconSpacing {
+	padding: 0 10rem;
 }
 
 .project {
 	margin: 6rem 0;
+	padding: 0 20rem;
 	min-height: 500px;
 	display: flex;
 	justify-content: space-between;
@@ -104,12 +113,15 @@
 }
 
 .resumeBtn {
-	margin-top: 1rem;
-	width: 200px;
-	font-size: 30px;
+	color:white !important;
+    border: 1px solid white;
+    margin-bottom: 8rem;
+    margin-top: 2rem;
+    font-size:30px;
 }
 
 .topTxt {
+	margin: 10rem 0;
 	padding: 0 20rem;
 	display: flex;
 	flex-direction: column;
@@ -263,15 +275,23 @@
 	z-index: -1;
 }
 
-.cSharp,
-.icon {
-	margin: 4rem;
-}
-
 .cSharp {
 	border: 1px solid white;
 	border-radius: 100%;
 	background-color: white;
+}
+
+.SkillTxt {
+	color:white;
+	display: flex;
+	justify-content: center;
+	font-family: portfolioTitle;
+}
+
+.alignIcons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .iconNav {
@@ -303,9 +323,24 @@
 		margin: 0 !important;
 	}
 
-	.topTxt {
-		margin: 0 1rem;
+	.myProjects {
+		margin-top: 0rem;
+		margin-bottom: 0rem !important;
 	}
+
+	.topTxt {
+		margin: 0 0;
+		padding: 0 0;
+	}
+
+	.project {
+		margin: 0rem 0;
+		padding: 0 00rem;
+		min-height: 500px;
+		display: flex;
+		justify-content: space-between;
+	}
+	
 
 	.productivity {
 		margin-bottom: 2rem;

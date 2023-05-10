@@ -13,7 +13,7 @@ export default function MyProjects() {
             <Col lg={12} xs={12}>
                 <h1 className='myProjects'>My Projects</h1>
             </Col>
-            <Col className='d-flex justify-content-end'>
+            <Col className='d-flex justify-content-center'>
                 <aside className="profile-card">
                     <header>
                         <img src={pokemonAPI} />
@@ -55,7 +55,7 @@ export default function MyProjects() {
                     </div>
                 </aside>
             </Col>
-            <Col className='d-flex justify-content-start'>
+            <Col className='d-flex justify-content-center'>
                 <aside className="profile-card3">
                     <header>
                         <img src={advice} />
