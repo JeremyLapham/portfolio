@@ -34,6 +34,7 @@
 
 .marginFoot {
 	margin-left: 5rem;
+	font-size:30px;
 }
 
 .myNav {
@@ -65,6 +66,8 @@
 .project {
 	margin-bottom:4rem;
 	min-height:500px;
+	display: flex;
+	justify-content: space-between;
 }
 
 .meImg {
@@ -131,14 +134,6 @@
 .footer {
 	background-color: #404064;
 	min-height: 300px;
-}
-
-.github {
-	text-decoration: none;
-	color: white;
-	display: flex;
-	align-items: center;
-	margin-left:5rem;
 }
 
 #slideshow {
@@ -239,6 +234,9 @@
 }
 
 .icon {
+	margin: 0 6px;
+}
+.iconNav {
 	margin: 0 6px;
 }
 
@@ -344,15 +342,8 @@
 	}
 
 	.marginFoot {
-		margin-left: 1rem
-	}
-
-	.github {
-		text-decoration: none;
-		color: white;
-		display: flex;
-		align-items: center;
-		margin-left:1rem;
+		margin-left: 1rem;
+		font-size:24px;
 	}
 
 }

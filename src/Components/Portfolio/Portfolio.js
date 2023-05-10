@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Portfolio.css';
 import './Card.css';
+import { useInView } from 'react-intersection-observer';
 import { Button, Col, Container, Modal, Nav, Navbar, Offcanvas, Row } from 'react-bootstrap';
 import jeremy from '../../assets/JEREMY.png';
 import jeremyFull from '../../assets/jeremy.jpg';
@@ -16,11 +17,13 @@ import me from '../../assets/meWithGirlfriend.jpg';
 import win from '../../assets/win.jpg';
 import resume from '../../assets/Jeremy Resume-1.png';
 import advice from '../../assets/advice.png';
-import { SiCsharp, SiHtml5, SiCss3, SiReact, SiJavascript, SiTypescript, SiBootstrap, SiSlack, SiJira, SiPostman, SiNotion } from 'react-icons/si';
+import { SiCsharp, SiHtml5, SiCss3, SiReact, SiJavascript, SiTypescript, SiBootstrap, SiSlack, SiJira, SiPostman, SiNotion, SiGithub, SiLinkedin, SiMicrosoftazure, SiTrello, SiFigma } from 'react-icons/si';
 import { BsServer } from 'react-icons/bs';
 
 
 export default function Portfolio() {
+
+    const [ref, inView] = useInView({ threshold: 0.5 })
 
     const [show, setShow] = useState(false);
 
@@ -33,9 +36,13 @@ export default function Portfolio() {
                 <Modal.Header closeButton>
                     <Modal.Title>Resume!</Modal.Title>
                 </Modal.Header>
-                <Modal.Body className='d-flex justify-content-center'><img className='resume' src={resume} /></Modal.Body>
+                <Modal.Body className='d-flex justify-content-center'>
+                    <a href={resume} target='_blank'>
+                        <img className='resume' src={resume} />
+                    </a>
+                </Modal.Body>
                 <Modal.Footer>
-                    <a href='/documents/Jeremy%20Resume.pdf' download> Download resume</a>
+                    <a href={resume} target='_blank'>Open in new tab</a>
                 </Modal.Footer>
             </Modal>
             <Navbar collapseOnSelect variant='dark' className='myNav' bg="dark" expand='lg'>
@@ -54,6 +61,8 @@ export default function Portfolio() {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
+                                <a href='https://github.com/JeremyLapham' target='_blank' ><SiGithub size={40} color='#f5f5f5' className='icon' /></a>
+                                <a href='https://www.linkedin.com/in/jeremylapham/' target='_blank'><SiLinkedin size={40} color='#0077b5' className='icon' /></a>
                                 <Nav.Link href="#aboutMe">About Me</Nav.Link>
                                 <Nav.Link href="#myProjects">My Projects</Nav.Link>
                                 <Nav.Link href="#contactMe">Contact Me</Nav.Link>
@@ -87,7 +96,7 @@ export default function Portfolio() {
                     <Col className='langFrameProduct'>
                         <h2>Langauges and Frameworks</h2>
                         <div className='fadeAnimation'>
-                            <SiCsharp size={50} color='green' style={{ border: '1px solid white', borderRadius: '100px', backgroundColor: 'white' }} className='icon' />
+                            <SiCsharp size={50} color='green' style={{ border: '1px solid white', borderRadius: '100px', backgroundColor: 'white' }} />
                             <SiHtml5 size={50} color='#e34c26' className='icon' />
                             <SiCss3 size={50} color='#264de4' className='icon' />
                             <SiReact size={50} color='#264de4' className='icon' />
@@ -101,10 +110,13 @@ export default function Portfolio() {
                 <Row>
                     <Col className='langFrameProduct'>
                         <h2>Productivity</h2>
-                        <div id='product' className='fadeAnimation'>
+                        <div id='product'  className='fadeAnimation'>
                             <SiSlack size={50} color='#E01E5A' className='icon' />
                             <SiJira size={50} color='#0052CC' className='icon' />
+                            <SiTrello size={50} color='#007ac0' className='icon' />
                             <SiPostman size={50} color='#EF5b25' className='icon' />
+                            <SiMicrosoftazure size={50} color='#008AD7' className='icon' />
+                            <SiFigma size={50} color='white' className='icon' />
                             <SiNotion size={50} color='black' className='icon' />
                         </div>
                     </Col>
@@ -141,8 +153,8 @@ export default function Portfolio() {
                 <Col lg={12} xs={12}>
                     <h1 className='myProjects'>My Projects</h1>
                 </Col>
-                <Col className='d-flex justify-content-center'>
-                    <aside class="profile-card">
+                <Col className='d-flex justify-content-end'>
+                    <aside className="profile-card">
                         <header>
                             <img src={pokemonAPI} />
                             <h1 style={{ color: 'black' }}>Pokemon API</h1>
@@ -150,7 +162,7 @@ export default function Portfolio() {
                             <h2 style={{ color: 'black' }}>React | Javascript | Bootstrap</h2>
                         </header>
 
-                        <div class="profile-bio">
+                        <div className="profile-bio">
                             <p>A rebuilt project in React Javacript using Bootstrap. This website offers extensive data on pokemon that are searched or randomly generated. This website uses the free Pokemon API to get said data to be pulled and displayed in a informational way.</p>
                             <div className='pokeIcon'>
                                 <SiReact size={50} color='#264de4' className='icon' />
@@ -162,7 +174,7 @@ export default function Portfolio() {
                     </aside>
                 </Col>
                 <Col className='d-flex justify-content-center'>
-                    <aside class="profile-card2">
+                    <aside className="profile-card2">
                         <header>
                             <img src={RememberWhen} />
                             <h1 style={{ color: 'black' }}>Remember When</h1>
@@ -170,7 +182,7 @@ export default function Portfolio() {
                             <h2 style={{ color: 'black' }}>React | Typescript | Bootstrap | C# | SQL</h2>
                         </header>
 
-                        <div class="profile-bio2">
+                        <div className="profile-bio2">
                             <p>A fullstack project made with a team using C#,SQL for our Backend as well as React Typescript with Bootstrap for our Frontend. This website allows users to create and login to an account and then the user can make folders and put memories into the folders for the user to view at any time.</p>
                             <div className='pokeIcon'>
                                 <SiReact size={50} color='#264de4' className='icon' />
@@ -183,8 +195,8 @@ export default function Portfolio() {
                         </div>
                     </aside>
                 </Col>
-                <Col className='d-flex justify-content-center'>
-                    <aside class="profile-card3">
+                <Col className='d-flex justify-content-start'>
+                    <aside className="profile-card3">
                         <header>
                             <img src={advice} />
                             <h1 style={{ color: 'black' }}>Advice Generator </h1>
@@ -192,7 +204,7 @@ export default function Portfolio() {
                             <h2 style={{ color: 'black' }}>React | Javascript | Bootstrap</h2>
                         </header>
 
-                        <div class="profile-bio3">
+                        <div className="profile-bio3">
                             <p>A fully responsive and small two day sprint project made in React using Javacript and Bootstrap. Project involved using the <a href='https://api.adviceslip.com/' target='_blank'>advice genorator here</a> and we were given a few pictures as refernce to build the project. Had to get as close as we could to the exact prototype we were given. But with mine I did a small UX change because of how the api works</p>
                             <div className='pokeIcon'>
                                 <SiReact size={50} color='#264de4' className='icon' />
@@ -209,8 +221,7 @@ export default function Portfolio() {
                     <h1 className='contactMe'>Contact Me!</h1>
                     <h4 className='marginFoot'>jeremylapham2004@gmail.com</h4>
                     <h4 className='marginFoot'>(209)-753-9899</h4>
-                    <a href='https://github.com/JeremyLapham' target='_blank' className='github'><box-icon type='logo' name='github' size='lg'></box-icon><h3>github.com/JeremyLapham</h3></a>
-                    <a href='https://www.linkedin.com/in/jeremylapham/' target='_blank' className='github'><box-icon type='logo' name='linkedin' size='lg'></box-icon><h3>linkedin.com/in/jeremylapham/</h3></a>
+
                 </Col>
             </Row>
         </Container>

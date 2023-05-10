@@ -5,8 +5,9 @@
 	background: #fff;
 	width: 370px;
 	height: 418px;
-	box-shadow: 0 3px 10px rgba(55, 55, 55, 0.3);
-	margin-bottom:1rem;
+	margin-bottom: 1rem;
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px #000;
 }
 
 .profile-card,
@@ -30,43 +31,21 @@
 }
 
 .profile-card:hover header,
-.profile-card:hover .profile-bio {
-	top: -270px;
-	background-image: url(../../assets/pokeball.gif);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	animation: play-once 5s linear forwards;
-	animation-play-state: running;
-}
-
+.profile-card:hover .profile-bio,
 .profile-card2:hover header,
-.profile-card2:hover .profile-bio2 {
+.profile-card2:hover .profile-bio2,
+.profile-card3:hover header,
+.profile-card3:hover .profile-bio3 {
 	top: -270px;
-	background-image: url(../../assets/remmeber.gif);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	animation: play-once 3s linear forwards;
-	animation-play-state: running;
 }
 
-.profile-card3:hover header,
-.profile-card3:hover .profile-bio3{
-	top: -270px;
-	background-image: url(../../assets/advice.gif);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	animation: play-once 4s linear forwards;
-	animation-play-state: running;
-}
 
 .profile-card3 header,
 .profile-card2 header,
 .profile-card header {
 	width: 100%;
 	min-height: 270px;
+	font-family: portfolioTitle;
 }
 
 
@@ -146,14 +125,5 @@
 	color: #333;
 	text-align: left;
 	margin: 30px;
-}
-
-@media screen and (max-width: 800px) and (min-width: 320px) {
-
-	.profile-card3,
-	.profile-card2,
-	.profile-card {
-		border-radius: 10px;
-	}
-
+	font-family: portfolio;
 }
