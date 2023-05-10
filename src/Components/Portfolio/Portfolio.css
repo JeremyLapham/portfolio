@@ -1,54 +1,70 @@
 @font-face {
-	font-family: portfolio;
-	src: url(../../assets/Lato-Regular.ttf);
-}
-
-@font-face {
 	font-family: portfolioTitle;
 	src: url(../../assets/PlayfairDisplay-VariableFont_wght.ttf);
 }
 
 .bg {
-	background-color: rgb(77, 77, 121);
-	min-height: 100vh;
-	color: white;
-	font-family: portfolio;
+	position: relative;
+	z-index: 1;
 }
 
 .topBG .meWithsum .topTxt h1 {
 	font-family: portfolioTitle;
+	color: white;
 }
 
 #product {
 	margin-bottom: 6rem !important;
 }
 
-.langFrameProduct,
-.contactMe,
-.myProjects,
-.aboutTxt {
+.skillsTxt,
+.myProjects {
 	text-align: center;
 	font-family: portfolioTitle;
 	margin-top: 3rem !important;
+	color:white;
+	font-size:50px !important;
 }
 
 .marginFoot {
-	margin-left: 5rem;
-	font-size:30px;
+	font-size: 20px;
+	color:white !important;
+}
+
+.navWords {
+	color: white !important;
 }
 
 .myNav {
 	position: fixed;
-	width: 100vw;
+	width: 100% !important;
 	height: 60px !important;
 	margin-left: -12px !important;
 	z-index: 1000;
 	margin-bottom: 2rem;
 }
 
-.topBG {
-	background-color: #60607D;
-	min-height: 800px;
+.myIcons {
+	width: 100%;
+	height: 200px;
+	overflow-y: hidden;
+	overflow-x: scroll;
+	display: flex;
+	flex-wrap: nowrap;
+	position: relative;
+	scroll-behavior: smooth;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.486);
+	white-space: nowrap;
+}
+
+.aboveIcontxt {
+	display: flex;
+	justify-content: center;
+	color: white;
+	font-family: portfolioTitle;
+	margin: 3rem 0;
+	font-size:50px !important;
 }
 
 .aboutMeSection {
@@ -64,8 +80,8 @@
 }
 
 .project {
-	margin-bottom:4rem;
-	min-height:500px;
+	margin: 6rem 0;
+	min-height: 500px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -89,15 +105,16 @@
 
 .resumeBtn {
 	margin-top: 1rem;
-	width:200px;
+	width: 200px;
 	font-size: 30px;
 }
 
 .topTxt {
-	margin-left: 5rem;
+	padding: 0 20rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	color: white;
 }
 
 .card {
@@ -233,9 +250,30 @@
 	transition: all 300ms;
 }
 
-.icon {
-	margin: 0 6px;
+.parallax-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../../assets/staicBG.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: -1;
 }
+
+.cSharp,
+.icon {
+	margin: 4rem;
+}
+
+.cSharp {
+	border: 1px solid white;
+	border-radius: 100%;
+	background-color: white;
+}
+
 .iconNav {
 	margin: 0 6px;
 }
@@ -246,7 +284,7 @@
 
 .myProjects {
 	margin-top: 4rem;
-	margin-bottom:8rem !important;
+	margin-bottom: 8rem !important;
 }
 
 .pokeIcon {
@@ -343,7 +381,7 @@
 
 	.marginFoot {
 		margin-left: 1rem;
-		font-size:24px;
+		font-size: 24px;
 	}
 
 }

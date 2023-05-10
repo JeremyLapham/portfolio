@@ -1,0 +1,16 @@
+@font-face {
+	font-family: portfolio;
+	src: url(./assets/Lato-Regular.ttf);
+}
+
+body {
+    background-image: url(./assets/staicBG.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: sticky;
+    width:100%;
+    height:100vh;
+    transform: translateZ(-1px);
+    font-family: portfolio !important;
+}
