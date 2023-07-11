@@ -23,7 +23,7 @@ export default function MyProjects() {
                     </header>
 
                     <div className="profile-bio">
-                        <p>A rebuilt project in React Javacript using Bootstrap. This website offers extensive data on pokemon that are searched or randomly generated. This website uses the free Pokemon API to get said data to be pulled and displayed in a informational way.</p>
+                        <p>A rebuilt project in React Javascript using Bootstrap. This website offers extensive data on pokemon that are searched or randomly generated. This website uses the free Pokemon API to get said data to be pulled and displayed in a informational way.</p>
                         <div className='pokeIcon'>
                             <SiReact size={50} color='#264de4' />
                             <SiJavascript size={50} color='#F0DB4F' />
@@ -51,7 +51,7 @@ export default function MyProjects() {
                             <SiCsharp size={50} color='green' style={{ border: '1px solid white', borderRadius: '100px', backgroundColor: 'white' }}  />
                             <BsServer size={50} color='#f29111' />
                         </div>
-                        <a className='button' href='https://remember-when.azurewebsites.net' target='_blank' rel='noopener noreferrer'>Check it out!</a>
+                        <a className='button' href='https://rememberwhen.azurewebsites.net' target='_blank' rel='noopener noreferrer'>Check it out!</a>
                     </div>
                 </aside>
             </Col>
@@ -65,7 +65,7 @@ export default function MyProjects() {
                     </header>
 
                     <div className="profile-bio3">
-                        <p>A fully responsive and small two day sprint project made in React using Javacript and Bootstrap. Project involved using the <a href='https://api.adviceslip.com/' target='_blank'>advice genorator here</a> and we were given a few pictures as refernce to build the project. Had to get as close as we could to the exact prototype we were given. But with mine I did a small UX change because of how the api works</p>
+                        <p>A fully responsive and small two day sprint project made in React using Javascript and Bootstrap. Project involved using the <a href='https://api.adviceslip.com' target='_blank'>advice generator api</a> and we were given a few pictures as reference to build the project. Had to get as close as we could to the exact prototype we were given. But with mine I did a small UX change because of how the api works</p>
                         <div className='pokeIcon'>
                             <SiReact size={50} color='#264de4' />
                             <SiJavascript size={50} color='#F0DB4F' />

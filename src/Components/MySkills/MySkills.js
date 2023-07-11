@@ -93,7 +93,7 @@ export default function MySkills() {
                     </Col>
                     <Col className='alignIcons'>
                         <SiGithub size={50} color='white' />
-                        <p className='iconTxt'>Draw.io</p>
+                        <p className='iconTxt'>Github</p>
                     </Col>
                 </Row>
             </Col>
