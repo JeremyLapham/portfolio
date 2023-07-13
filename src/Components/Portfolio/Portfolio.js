@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Portfolio.css';
-import { Button, Col, Container, Dropdown, Modal, Nav, NavDropdown, Navbar, Offcanvas, Row, DropdownButton, ButtonGroup } from 'react-bootstrap';
+import { Container, Dropdown, Modal, Nav, Navbar, Offcanvas, DropdownButton, ButtonGroup, ModalBody, ModalHeader } from 'react-bootstrap';
 import resume from '../../assets/Jeremys Resume.pdf';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { BiNews } from 'react-icons/bi';
@@ -34,13 +34,10 @@ export default function Portfolio() {
     return (
         <Container fluid className='bg'>
             <Modal size="lg" show={show} onHide={handleClose}>
-                <Modal.Header closeButton></Modal.Header>
-                    <a href={resume} target='_blank'>
-                        <iframe className='resume' src={resume} />
-                    </a>
-                <Modal.Footer>
-                    <a href={resume} target='_blank'>Open in new tab</a>
-                </Modal.Footer>
+                <ModalHeader className='modalBody' closeButton></ModalHeader>
+                <ModalBody className='modalBody'>
+                <iframe className='resume' src={resume} />
+                </ModalBody>
             </Modal>
             <Navbar collapseOnSelect variant='dark' className='myNav' bg="dark" expand='lg'>
                 <Container>
@@ -58,15 +55,17 @@ export default function Portfolio() {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <NavDropdown title="Contacts" id="navbarScrollingDropdown">
-                                    <NavDropdown.Item>jeremyslapham@gmail.com</NavDropdown.Item>
-                                    <NavDropdown.Item>(209)-753-9899</NavDropdown.Item>
-                                </NavDropdown>
+                                <div className="mb-2">
+                                    <DropdownButton as={ButtonGroup} id={`dropdown-button-drop-up`} drop="down" variant="dark" title={` Contacts `} >
+                                        <Dropdown.Item>jeremyslapham@gmail.com</Dropdown.Item>
+                                        <Dropdown.Item>(209)-753-9899</Dropdown.Item>
+                                    </DropdownButton>
+                                </div>
                                 <Nav.Link href="#aboutMe" className='navWords' title='About Me'>About Me</Nav.Link>
                                 <Nav.Link href="#myProjects" className='navWords' title='My Projects'>My Projects</Nav.Link>
                                 <Nav.Link href='https://github.com/JeremyLapham' target='_blank' title='My Github'><SiGithub size={30} color='#f5f5f5' /></Nav.Link>
                                 <Nav.Link href='https://www.linkedin.com/in/jeremylapham/' target='_blank' title='My LinkedIn'><SiLinkedin size={30} color='#0077b5' /></Nav.Link>
-                                <Nav.Link onClick={handleShow} target='_blank'><BiNews size={35} color='white' title='My Resume'/></Nav.Link>
+                                <Nav.Link onClick={handleShow} target='_blank'><BiNews size={35} color='white' title='My Resume' /></Nav.Link>
                             </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>
@@ -76,6 +75,7 @@ export default function Portfolio() {
             <MySkills />
             <MyProjects />
             <Aboutme />
+            <div className='parallax-bg'></div>
             <Navbar collapseOnSelect variant='dark' className='myNav' bg="dark" expand='lg'>
                 <Container>
                     <Navbar.Brand href="#jeremy">JeremyLapham</Navbar.Brand>
@@ -108,7 +108,6 @@ export default function Portfolio() {
                     </Navbar.Offcanvas>
                 </Container>
             </Navbar>
-            <div className='parallax-bg'></div>
         </Container>
     )
 }
